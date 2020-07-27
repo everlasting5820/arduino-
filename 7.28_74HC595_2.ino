@@ -1,6 +1,7 @@
 int big = 2;
 int push = 3;
 int datain = 4;
+int datainput[8]={1,0,1,0,1,0,1,0};
 
 void setup(){
   pinMode(big,OUTPUT);  //将大平台定义为引脚位2（就是ST）
@@ -11,7 +12,10 @@ void setup(){
 void loop(){
   digitalWrite(big,LOW);  //先放下平台
 
-  putsomething(1);
+  for(int i=0;i<8;i++){
+   putsomething(datainput[i]); 
+  }
+  /* putsomething(1);
   putsomething(0);
   putsomething(1);
   putsomething(0);
@@ -21,7 +25,7 @@ void loop(){
   putsomething(0);
   putsomething(1);
   putsomething(0);
-  
+  */
   digitalWrite(big,HIGH);  //上升平台
 }
 void putsomething(int number){
